@@ -13,7 +13,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 
-st.write("# This is a H1 header!...")
+st.write("# This is a H1 header!...") # same as st.title("This is a H1 header!...")
 st.write("## This is a H2 header!...")
 st.write("### This is a H3 header!")
 
@@ -56,43 +56,34 @@ col1.write("TBD")
 col2.write("All movie titles")
 col3.write("Displaying only the 'title' column")
 col2.write(np.array(sorted(str(i) for i in data['title'].unique() if type(i) != 'str'))) # each cell can easily accumulate np.array values
-# col2.write(sorted([str(i) for i in data['title'].unique().tolist() if type(i) != 'str']))
 # col2.write(data['title'].unique())
 col3.write(data['title'])
 
-# print(np.sort(data['title'].unique()))
-# print(type(data['title'].unique()))
 
 # import inspect; print(inspect.signature(col1.metric)) # shall be printed in the console per page refresh (F5)
 
-# how to sort 'numpy.ndarray'?
-# print(sorted(data['title'].unique())) # does not work, since it is a numpy array
-# print(data['title'].unique().sort()) # does not work, since it is a numpy array
-# print(data['title'].unique().sort()) # does not work, since it is a numpy array
-# print(data['title'].unique().sort()) # does not work, since it is a numpy array
-# print(np.sort(data['title'].unique())) # does not work, since it is a numpy array
-# print(np.sort(data['title'].unique())) # does not work, since it is a numpy array
 
-# print(data['title'].unique().tolist()) # works, since it is a list now
-print("shai")
-
-# how to convert numpy array to list?
-# print(type(data['title'].unique()))
-# print(data['title'].unique().tolist())
-
-# print(sorted(data['title'].unique().tolist())) # works, since it is a list now
+# file manipulation from perplexity:
 
 
-# i.tbd  for i in data['title'].unique().tolist() else i
 
-# one liner for if els in list comprehension
-# print([i for i in data['title'].unique().tolist() if i != '']) # works, since it is a list now
+st.write("### File Upload Example")
 
-# print(sorted([str(i) for i in data['title'].unique() if type(i) != 'str'])) # works, since it is a list now
-# print(sorted([str(i) for i in data['title'].unique().tolist() if type(i) != 'str'])) # works, since it is a list now
+# Add a file uploader button
+uploaded_file = st.file_uploader("Choose a file", type=["csv", "txt", "xlsx"]) # allowed file types as listed
+
+if uploaded_file is not None:
+    st.write("File name:", uploaded_file.name)
+    # Process the file based on its type
+    if uploaded_file.type == "text/csv":
+        df = pd.read_csv(uploaded_file)
+        st.write(df)
+    elif uploaded_file.type == "text/plain":
+        text = uploaded_file.read().decode("utf-8")
+        st.text_area("File contents", text)
+    elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+        df = pd.read_excel(uploaded_file)
+        st.write(df)
 
 
-print(type(data['title'].unique()))
-
-# how to convert a list into numpy.ndarray?
-# print(np.array(data['title'].unique())) # works, since it is a numpy array now
+import inspect; print(inspect.signature(st.download_button)) # shall be printed in the console per page refresh (F5)

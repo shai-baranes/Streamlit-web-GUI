@@ -13,3 +13,10 @@ This project is designed to [insert main purpose or functionality]. It aims to [
 To install this project, follow these steps:
 
 - [Application URL](https://shai-baranes-streamlit-web-gui-main-0xfyfu.streamlit.app)
+
+
+# Notes
+- Changing code is reflected on localhost after page refresh (F5)
+- GIT PUSH is reflected globally on shared URL (refer to 'Application URL' above...)
+- Use the terminal to run the app with `streamlit run app.py` (e.g. main.py or simple_calc.py)
+- Use: import inspect; print(inspect.signature(col1.metric)) # to better utilize the function arguments/capabilities
