@@ -12,4 +12,4 @@ This project is designed to [insert main purpose or functionality]. It aims to [
 # Installation
 To install this project, follow these steps:
 
-- [APP URL]: https://shai-baranes-streamlit-web-gui-main-0xfyfu.streamlit.app/
+- [Application URL]: (https://shai-baranes-streamlit-web-gui-main-0xfyfu.streamlit.app/)
