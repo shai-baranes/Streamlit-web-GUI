@@ -5,7 +5,7 @@
 # streamlit api documentation: https://docs.streamlit.io/library/api-reference
 # streamlit charts documentation: https://docs.streamlit.io/library/api-reference/charts
 
-# note that after adding pages, weneed to re-execute the script (F5 is not sufficent)
+# note that after adding pages, we need to re-execute the script (F5 is not sufficent)
 # note also that you probably need to sepreate projects directories since the pages are shared
 # note also that after removing data from page, you get to see the changes only after clicking the newly and temporarily introduced button at the top - called: 'rerun'
 
@@ -86,4 +86,4 @@ if uploaded_file is not None:
         st.write(df)
 
 
-import inspect; print(inspect.signature(st.download_button)) # shall be printed in the console per page refresh (F5)
+# import inspect; print(inspect.signature(st.download_button)) # shall be printed in the console per page refresh (F5)
