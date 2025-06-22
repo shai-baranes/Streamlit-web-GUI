@@ -86,4 +86,12 @@ if uploaded_file is not None:
         st.write(df)
 
 
+
+# json representation
+st.write("### Json representation:")
+st.write({"key": ["value"]})
+
+
+
+
 # import inspect; print(inspect.signature(st.download_button)) # shall be printed in the console per page refresh (F5)
